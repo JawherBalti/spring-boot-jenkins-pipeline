@@ -20,7 +20,9 @@ MAINTAINER dstar55@yahoo.com
 EXPOSE 8080
 
 #default command
-CMD java -jar /data/hello-world-0.1.0.jar
+#CMD java -jar /data/hello-world-0.1.0.jar
+ENV SPRINGPROFILES=prod
+CMD ["java", "-Dspring.profiles.active=${SPRINGPROFILES}", "-jar", "/data/hello-world-0.1.0.jar"]
 
 #copy hello world to docker image from builder image
 

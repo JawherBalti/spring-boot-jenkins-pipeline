@@ -2,6 +2,8 @@ version: "3.0"
 
 services:
   hello-world:
+    environment:
+      - "SPRINGPROFILES=prod,actuator"
     build: 
       context: ./
       dockerfile: Dockerfile
